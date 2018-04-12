@@ -1,0 +1,11 @@
+<!-- pages/welcome.wxml -->
+<view>
+    <text>{{profile.nickName}}</text>
+    <!-- 注意这里mode=widthFix是固定宽高比 css里面只需要设定width就可以了 -->
+    <image src="{{profile.avatarUrl}}" mode="widthFix"></image>
+    <!-- 声明按钮点击的事件是获取用户资料
+    open-type是微信开放能力 
+    open-type="getUserInfo" 可以从bindgetuserinfo回调中获取到用户信息
+    bindgetuserinfo	的类型是Handler	用户点击该按钮时，会返回获取到的用户信息 -->
+    <button open-type="getUserInfo" bindgetuserinfo="getProfile">Your profile</button>
+</view>

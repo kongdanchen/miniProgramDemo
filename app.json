@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/welcome"
+    "pages/welcome/welcome"
   ],
   "window":{
     "navigationBarTitleText":"hey"
