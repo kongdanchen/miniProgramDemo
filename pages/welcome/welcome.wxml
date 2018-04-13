@@ -1,8 +1,19 @@
-<!-- pages/welcome.wxml -->
-<view>
-    <text>{{profile.nickName}}</text>
+<!-- 直接这样写只是声明了一个模板 是不会被显示的 -->
+<template name="userInfoTemplate">
+    <text>{{nickName}}</text>
     <!-- 注意这里mode=widthFix是固定宽高比 css里面只需要设定width就可以了 -->
-    <image src="{{profile.avatarUrl}}" mode="widthFix"></image>
+    <image src="{{avatarUrl}}" mode="widthFix"></image>
+</template>
+<!-- pages/welcome.wxml -->
+<view class="main" hidden="{{hiddenFlag ? true : false}}">
+    <!-- ...是扩展运算符 将一个数组转为用逗号分隔的参数序列
+    （通过扩展运算符将profile对象传给模板）
+    如果不使用模板的写法 应该是 <text>{{profile.nickName}}</text> -->
+    <template is="userInfoTemplate" data="{{...profile}}"></template>
+    <!-- block 不是一个组件 只是一个包装元素 在渲染的时候是不会被渲染出来的 -->
+    <block wx:for="{{items}}" wx:for-item="item" wx:key="index">
+        <view>index{{index}}:{{item.name}}</view>
+    </block>
     <!-- 声明按钮点击的事件是获取用户资料
     open-type是微信开放能力 
     open-type="getUserInfo" 可以从bindgetuserinfo回调中获取到用户信息
