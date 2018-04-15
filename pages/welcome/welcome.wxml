@@ -19,4 +19,8 @@
     open-type="getUserInfo" 可以从bindgetuserinfo回调中获取到用户信息
     bindgetuserinfo	的类型是Handler	用户点击该按钮时，会返回获取到的用户信息 -->
     <button open-type="getUserInfo" bindgetuserinfo="getProfile">Your profile</button>
+
+    <button bindtap="makeRequest">request</button>
+
+
 </view>

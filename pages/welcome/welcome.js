@@ -34,6 +34,22 @@ Page({
     this.setData({
       "profile": res.detail.userInfo
     });
+  },
+  makeRequest: function () {
+    const requestTask = wx.request({
+      url: 'http://127.0.0.1:8888/', //仅为示例，并非真实的接口地址
+      method:'POST',
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data);
+      }
+    });
   }
 
 });

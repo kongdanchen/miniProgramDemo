@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/welcome/welcome"
+      "pages/welcome/welcome"
+
   ],
-  "window":{
-    "navigationBarTitleText":"hey"
+  "window": {
+    "navigationBarTitleText": "hey"
   }
 }
